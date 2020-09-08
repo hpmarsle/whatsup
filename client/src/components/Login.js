@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import { Container, Form, Button } from 'react-bootstrap'
+import { v4 as uuidV4 } from 'uuid'
 
 export default function Login({ onIdSubmit }) {
     const idRef = useRef()
@@ -9,6 +10,9 @@ export default function Login({ onIdSubmit }) {
         onIdSubmit(idRef.current.value)
     }
 
+    function createNewId() {
+        onIdSubmit(uuidV4())
+    }
     return (
         <Container className='align-items-center d-flex' style={{ height: '100vh' }}>
             <Form onSubmit={handleSubmit}>
@@ -21,7 +25,7 @@ export default function Login({ onIdSubmit }) {
                     <Form.Control type="password" />
                 </Form.Group>
                 <Button type='submit'>Login</Button>
-                <Button variant='secondary'>Create a New Id</Button>
+                <Button onClick={createNewId} variant='secondary'>Create a New Id</Button>
             </Form>
         </Container>
     )
