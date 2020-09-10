@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Dashboard() {
+export default function Dashboard({id}) {
     return (
         <div>
-            THIS IS THE DASHBOARD WHEN LOGGED IN
+            {id} is logged in.
         </div>
     )
 }

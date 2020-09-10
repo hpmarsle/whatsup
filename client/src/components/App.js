@@ -8,7 +8,7 @@ function App() {
   const [id, setId] = useLocalStorage('id')
   return (
       <>
-        {id ? <Dashboard /> : <Login onIdSubmit={setId} />}
+        {id ? <Dashboard id={id}/> : <Login onIdSubmit={setId} />}
         
       </>
   );
