@@ -1,9 +1,10 @@
 import React from 'react'
+import Sidebar from './Sidebar'
 
 export default function Dashboard({id}) {
     return (
         <div>
-            {id} is logged in.
+            <Sidebar id={id} />
         </div>
     )
 }
