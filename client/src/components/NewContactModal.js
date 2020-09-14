@@ -1,13 +1,14 @@
 import React, { useRef } from 'react'
 import { Modal, Form, Button } from 'react-bootstrap'
 
-export default function NewContactModal() {
+export default function NewContactModal({closeModal}) {
     const idRef = useRef()
     const nameRef = useRef()
     
     const handleSubmit = (e) => {
         e.preventDefault()
         
+        closeModal()
     }
     
     return (
