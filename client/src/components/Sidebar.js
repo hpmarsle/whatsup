@@ -12,6 +12,9 @@ export default function Sidebar({id}) {
     const [activeKey, setActiveKey] = useState(CONVERSATIONS_KEY)
     const conversationsOpen = activeKey === CONVERSATIONS_KEY
     
+    const [modalOpen, setModalOpen] = useState(false) 
+    const closeModal = () => setModalOpen(false)
+    
     return (
         <div style={{width: '250px'}} className="d-flex flex-column">
             <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
@@ -34,12 +37,12 @@ export default function Sidebar({id}) {
                 <div className="p-2 border-top border-right small">
                     Your Id: <span className="text-muted">{id}</span>
                 </div>
-                <Button className="rounded-0">
+                <Button onClick={() => setModalOpen(true)} className="rounded-0">
                     New {conversationsOpen ? "Conversation" : "Contact" } 
                 </Button>
             </Tab.Container>
 
-            <Modal>
+            <Modal show={modalOpen} onHide={closeModal}>
                 {conversationsOpen ?
                     <NewConversationModal /> : 
                     <NewContactModal />
