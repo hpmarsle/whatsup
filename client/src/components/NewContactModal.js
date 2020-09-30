@@ -10,7 +10,7 @@ export default function NewContactModal({closeModal}) {
     const handleSubmit = (e) => {
         e.preventDefault()
         
-        // createContact(idRef.current.value, nameRef.current.value)
+        createContact(idRef.current.value, nameRef.current.value)
         closeModal()
     }
 
