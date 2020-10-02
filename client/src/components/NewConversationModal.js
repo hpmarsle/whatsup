@@ -5,10 +5,10 @@ import { useContacts } from '../contexts/ContactsProvider'
 export default function NewConversationModal({closeModal}) {
     const [selectedContactIds, setSelectedContactIds] = useState([]) 
     const { contacts } = useContacts()
-    
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        
+        // createConversation
         closeModal()
     }
 
@@ -39,7 +39,7 @@ export default function NewConversationModal({closeModal}) {
                             />
                         </Form.Group>
                     ))}
-                    <Button type="submit">Create</Button>
+                    <Button onSubmit={handleSubmit} type="submit">Create</Button>
                 </Form>
             </Modal.Body>
         </>
