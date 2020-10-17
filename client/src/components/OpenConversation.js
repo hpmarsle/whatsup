@@ -10,15 +10,17 @@ export default function OpenConversation() {
                 THIS WILL SHOW THE SELECTED CONVERSATION
             </div>
             <Form>
-                <InputGroup>
-                    <Form.Control
-                        as="textarea"
-                        required
-                        value={text}
-                        onChange={e => setText(e.target.value)}
-                        style={{height: '75px', resize: 'none'}}
-                    />
-                </InputGroup>
+                <Form.Group>
+                    <InputGroup>
+                        <Form.Control
+                            as="textarea"
+                            required
+                            value={text}
+                            onChange={e => setText(e.target.value)}
+                            style={{height: '75px', resize: 'none'}}
+                        />
+                    </InputGroup>
+                </Form.Group>
             </Form>
         </div>
     )
